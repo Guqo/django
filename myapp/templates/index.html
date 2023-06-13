@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row mb-3 bg-info p-3">
+        <div class="col-sm-12">
+            <h2 class="text-center">Nejlépe hodnocení fotbalisté</h2>
+        </div>
+    </div>
+    <div class="row mx-5">
+        {% for fotbalista in fotbaliste %}
+            <div class="col-sm-4">
+                <div class="card">
+                    {% if fotbalista.poster %}
+                        <img class="card-img-top rounded mx-auto d-block" style="max-width: 700px; max-height: 500px"
+                             src="{{ fotbalista.poster.url }}"
+                             alt="{{ fotbalista.name }} {{ fotbalista.surname }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">{{ fotbalista.name }} {{ fotbalista.surname }}</h4>
+                        <p><strong>Hodnocení:</strong> {{ fotbalista.rate }}</p>
+                        <a href="{% url 'fotbalista_detail' fotbalista.pk %}" class="btn btn-primary">Podrobnosti</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
