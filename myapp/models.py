@@ -16,7 +16,7 @@ class Fotbalista(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Jméno fotbalisty', help_text="Enter footballer's name")
     surname = models.CharField(max_length=50, unique=True, default='', verbose_name='Příjmení fotbalisty', help_text="Enter footballer's surname")
     birthDate = models.DateField(blank=True, null=True, verbose_name='Datum narození fotbalisty')
-    description = models.CharField(max_length=255, null=True, verbose_name='Popis fotbalisty', help_text="Enter footballer's description")
+    description = models.CharField(max_length=500, null=True, verbose_name='Popis fotbalisty', help_text="Enter footballer's description")
     rate = models.IntegerField(verbose_name='Hodnocení fotbalisty', help_text="Enter a footballer's rating", null=True)
     poster = models.ImageField(verbose_name="Fotka fotbalisty", null=True)
     klub = models.ForeignKey(to="Klub", on_delete=models.CASCADE, null=True)
