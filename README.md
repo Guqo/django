@@ -1,5 +1,4 @@
 #Django - Ukázkový web
 ## Ročníkový projekt
 
-uživ. jm.: student
-heslo: student
+uživ. jm.: student       heslo: student
